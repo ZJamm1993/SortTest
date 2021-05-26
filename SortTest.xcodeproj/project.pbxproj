@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1CA13B5B26465ED600194784 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA13B5A26465ED600194784 /* main.swift */; };
+		1CD0FA12265DEC1100BB31B0 /* NumberTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */; };
+		1CD0FA14265DEDE500BB31B0 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		1CA13B5726465ED600194784 /* SortTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SortTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA13B5A26465ED600194784 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTool.swift; sourceTree = "<group>"; };
+		1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				1CA13B5A26465ED600194784 /* main.swift */,
+				1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */,
+				1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */,
 			);
 			path = SortTest;
 			sourceTree = "<group>";
@@ -119,6 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CD0FA12265DEC1100BB31B0 /* NumberTool.swift in Sources */,
+				1CD0FA14265DEDE500BB31B0 /* MergeSort.swift in Sources */,
 				1CA13B5B26465ED600194784 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
