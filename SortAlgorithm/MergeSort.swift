@@ -7,8 +7,6 @@
 
 import Foundation
 
-typealias E = Int
-
 class MergeSort<E: Comparable> {
     var array = NSMutableArray()
     var leftTemp = NSMutableArray()
@@ -24,7 +22,7 @@ class MergeSort<E: Comparable> {
         }
     }
     
-    func sort() -> [E] {
+    func sorted() -> [E] {
         self.sort(begin: 0, end: self.array.count)
         return self.array as! [E]
     }
