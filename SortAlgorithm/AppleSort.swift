@@ -7,29 +7,23 @@
 
 import Foundation
 
-class NSArraySort<E: Comparable> {
-    var array = NSMutableArray()
-    init(array: [E]) {
-        for i in array {
-            self.array.add(i)
-        }
-    }
-    
-    func sorted() -> [E] {
-        let arr = self.array.sortedArray(using: [NSSortDescriptor(key: nil, ascending: true)])
+class NSArraySort<E: Comparable> : BaseSort<E> {
+    override func sorted() -> [E] {
+        let arr = self.nsarray.sortedArray(using: [NSSortDescriptor(key: nil, ascending: true)])
         return arr as! [E]
     }
 }
 
-class SwiftArraySort<E: Comparable> {
-    var array = [E]()
-    init(array: [E]) {
-        self.array.append(contentsOf: array)
+class SwiftArraySort<E: Comparable> : BaseSort<E> {
+    var swiftarray = [E]()
+    required init(array: [E]) {
+        super.init(array: array)
+        self.swiftarray.append(contentsOf: array)
     }
     
-    func sorted() -> [E] {
-        self.array.sort()
-        return self.array
+    override func sorted() -> [E] {
+        self.swiftarray.sort()
+        return self.swiftarray
     }
 }
 

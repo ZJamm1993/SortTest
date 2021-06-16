@@ -26,7 +26,7 @@ struct NumberTool {
         return arr
     }
     
-    static func isSorted(arr: [Int]) -> Bool {
+    static func isSorted<E: Comparable>(arr: [E]) -> Bool {
         let count = arr.count
         if count < 2 {
             return true

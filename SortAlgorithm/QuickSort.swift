@@ -9,35 +9,22 @@ import Foundation
 
 // https://www.geeksforgeeks.org/quick-sort/
 
-class QuickSort <E: Comparable> {
-    var array = NSMutableArray()
-
-    init(array: [E]) {
-       for i in array {
-           self.array.add(i)
-       }
-    }
-    
-    private func swap(index: Int, toIndex: Int) {
-        let t = self.array[index]
-        self.array[index] = self.array[toIndex]
-        self.array[toIndex] = t
-    }
+class QuickSort<E: Comparable> : BaseSort<E> {
     
     private func partition(begin: Int, end: Int) -> Int {
         // 使用随机位置坐轴点
         let randomIndex = Int.random(in: begin ..< end)
-        swap(index: randomIndex, toIndex: end - 1)
+        swapItem(at: randomIndex, toIndex: end - 1)
         
-        let pivot = self.array[end - 1] as! E
+        let pivot = self.nsarray[end - 1] as! E
         var i = begin - 1
         for j in stride(from: begin, to: end - 1, by: 1) {
-            if (self.array[j] as! E) < pivot {
+            if (self.nsarray[j] as! E) < pivot {
                 i += 1
-                swap(index: i, toIndex: j)
+                swapItem(at: i, toIndex: j)
             }
         }
-        swap(index: i + 1, toIndex: end - 1)
+        swapItem(at: i + 1, toIndex: end - 1)
         return i + 1
     }
     
@@ -49,8 +36,8 @@ class QuickSort <E: Comparable> {
         }
     }
     
-    func sorted() -> [E] {
-        self.quickSort(begin: 0, end: self.array.count)
-        return self.array as! [E]
+    override func sorted() -> [E] {
+        self.quickSort(begin: 0, end: self.nsarray.count)
+        return self.nsarray as! [E]
     }
 }

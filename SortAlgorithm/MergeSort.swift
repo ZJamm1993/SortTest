@@ -7,24 +7,18 @@
 
 import Foundation
 
-class MergeSort<E: Comparable> {
-    var array = NSMutableArray()
+class MergeSort<E: Comparable> : BaseSort<E> {
     var leftTemp = NSMutableArray()
-    // 用NSMutableArray比Swift.Array快？？？
-    init(array: [E]) {
-        for i in array {
-            self.array.add(i)
-        }
-        if let fir = self.array.firstObject as? E {
-            for _ in 0 ..< (self.array.count / 2 + 1) {
-                self.leftTemp.add(fir)
-            }
+    required init(array: [E]) {
+        super.init(array: array)
+        for _ in 0 ..< (self.nsarray.count / 2 + 1) {
+            self.leftTemp.add(0)
         }
     }
     
-    func sorted() -> [E] {
-        self.sort(begin: 0, end: self.array.count)
-        return self.array as! [E]
+    override func sorted() -> [E] {
+        self.sort(begin: 0, end: self.nsarray.count)
+        return self.nsarray as! [E]
     }
     
     // 左闭右开
@@ -43,15 +37,15 @@ class MergeSort<E: Comparable> {
         var rightIndex = mid, rightEnd = end
         var arrayIndex = begin
         for i in 0 ..< leftEnd { // 拷贝[begin, mid)
-            self.leftTemp[i] = self.array[i + begin]
+            self.leftTemp[i] = self.nsarray[i + begin]
         }
         while leftIndex < leftEnd {
-            if rightIndex < rightEnd && (self.leftTemp[leftIndex] as! E) > (self.array[rightIndex] as! E) {
-                self.array[arrayIndex] = self.array[rightIndex]
+            if rightIndex < rightEnd && (self.leftTemp[leftIndex] as! E) > (self.nsarray[rightIndex] as! E) {
+                self.nsarray[arrayIndex] = self.nsarray[rightIndex]
                 arrayIndex += 1
                 rightIndex += 1
             } else {
-                self.array[arrayIndex] = self.leftTemp[leftIndex]
+                self.nsarray[arrayIndex] = self.leftTemp[leftIndex]
                 arrayIndex += 1
                 leftIndex += 1
             }
