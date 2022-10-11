@@ -8,17 +8,17 @@
 import Foundation
 
 class MergeSort<E: Comparable> : BaseSort<E> {
-    var leftTemp = NSMutableArray()
+    var leftTemp = [E]()
     required init(array: [E]) {
         super.init(array: array)
-        for _ in 0 ..< (self.nsarray.count / 2 + 1) {
-            self.leftTemp.add(0)
+        for _ in 0 ..< (self.items.count / 2 + 1) {
+            self.leftTemp.append(0 as! E)
         }
     }
     
     override func sorted() -> [E] {
-        self.sort(begin: 0, end: self.nsarray.count)
-        return self.nsarray as! [E]
+        self.sort(begin: 0, end: self.items.count)
+        return self.items
     }
     
     // 左闭右开
@@ -37,15 +37,15 @@ class MergeSort<E: Comparable> : BaseSort<E> {
         var rightIndex = mid, rightEnd = end
         var arrayIndex = begin
         for i in 0 ..< leftEnd { // 拷贝[begin, mid)
-            self.leftTemp[i] = self.nsarray[i + begin]
+            self.leftTemp[i] = self.items[i + begin]
         }
         while leftIndex < leftEnd {
-            if rightIndex < rightEnd && (self.leftTemp[leftIndex] as! E) > (self.nsarray[rightIndex] as! E) {
-                self.nsarray[arrayIndex] = self.nsarray[rightIndex]
+            if rightIndex < rightEnd && (self.leftTemp[leftIndex]) > (self.items[rightIndex]) {
+                self.items[arrayIndex] = self.items[rightIndex]
                 arrayIndex += 1
                 rightIndex += 1
             } else {
-                self.nsarray[arrayIndex] = self.leftTemp[leftIndex]
+                self.items[arrayIndex] = self.leftTemp[leftIndex]
                 arrayIndex += 1
                 leftIndex += 1
             }

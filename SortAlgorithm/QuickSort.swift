@@ -16,10 +16,10 @@ class QuickSort<E: Comparable> : BaseSort<E> {
         let randomIndex = Int.random(in: begin ..< end)
         swapItem(at: randomIndex, toIndex: end - 1)
         
-        let pivot = self.nsarray[end - 1] as! E
+        let pivot = self.items[end - 1]
         var i = begin - 1
         for j in stride(from: begin, to: end - 1, by: 1) {
-            if (self.nsarray[j] as! E) < pivot {
+            if (self.items[j]) < pivot {
                 i += 1
                 swapItem(at: i, toIndex: j)
             }
@@ -37,7 +37,7 @@ class QuickSort<E: Comparable> : BaseSort<E> {
     }
     
     override func sorted() -> [E] {
-        self.quickSort(begin: 0, end: self.nsarray.count)
-        return self.nsarray as! [E]
+        self.quickSort(begin: 0, end: self.items.count)
+        return self.items
     }
 }

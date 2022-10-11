@@ -10,7 +10,7 @@ import Foundation
 print("Hello, World!")
 
 var arr: [Int] = []
-let count = 1000000
+let count = 100000
 arr = NumberTool.randomInts(count: count)
 //        arr = NumberTool.sortInts(begin: 0, end: count)
 
@@ -23,6 +23,12 @@ arr = NumberTool.randomInts(count: count)
 
 let group = TestTool.AsyncGroup()
 group.addWork {
+    MergeSort.testSort(arr: arr)
+}
+group.addWork {
+    HeapSort.testSort(arr: arr)
+}
+group.addWork {
     NSArraySort.testSort(arr: arr)
 }
 group.addWork {
@@ -30,11 +36,5 @@ group.addWork {
 }
 group.addWork {
     QuickSort.testSort(arr: arr)
-}
-group.addWork {
-    MergeSort.testSort(arr: arr)
-}
-group.addWork {
-    HeapSort.testSort(arr: arr)
 }
 group.startWork()

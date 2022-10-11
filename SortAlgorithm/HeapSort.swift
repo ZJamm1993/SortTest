@@ -15,10 +15,10 @@ class HeapSort<E: Comparable> : BaseSort<E> {
         var largest = root
         let left = 2 * root + 1
         let right = 2 * root + 2
-        if left < size && self.nsarray[left] as! E > self.nsarray[largest] as! E {
+        if left < size && self.items[left] > self.items[largest] {
             largest = left
         }
-        if right < size && self.nsarray[right] as! E > self.nsarray[largest] as! E {
+        if right < size && self.items[right] > self.items[largest] {
             largest = right
         }
         if largest != root {
@@ -29,7 +29,7 @@ class HeapSort<E: Comparable> : BaseSort<E> {
     
     private func heapSort() {
         // 原地建堆
-        let size = self.nsarray.count
+        let size = self.items.count
         for i in stride(from: size / 2 - 1, through: 0, by: -1) {
             heapify(size: size, root: i)
         }
@@ -43,6 +43,6 @@ class HeapSort<E: Comparable> : BaseSort<E> {
     
     override func sorted() -> [E] {
         self.heapSort()
-        return self.nsarray as! [E]
+        return self.items
     }
 }

@@ -9,18 +9,16 @@ import Foundation
 
 class BaseSort<E: Comparable> {
     
-    var nsarray = NSMutableArray()
-    // 用NSMutableArray比Swift.Array快？？？
+    var items: [E]
+    
     required init(array: [E]) {
-        for i in array {
-            self.nsarray.add(i)
-        }
+        items = array
     }
     
     func swapItem(at index: Int, toIndex: Int) {
-        let t = self.nsarray[index]
-        self.nsarray[index] = self.nsarray[toIndex]
-        self.nsarray[toIndex] = t
+        let t = self.items[index]
+        self.items[index] = self.items[toIndex]
+        self.items[toIndex] = t
     }
     
     func sorted() -> [E] {
