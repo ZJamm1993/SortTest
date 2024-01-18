@@ -9,32 +9,22 @@ import Foundation
 
 print("Hello, World!")
 
-var arr: [Int] = []
-let count = 100000
-arr = NumberTool.randomInts(count: count)
-//        arr = NumberTool.sortInts(begin: 0, end: count)
+func randomInts(count: Int) -> [Int] {
+    var arr = [Int]()
+    for i in (0 ..< count) {
+        let ra = Int.random(in: 0 ..< 9999999)
+        arr.append(ra)
+    }
+    return arr
+}
 
-//    TestSort(name: "NSArraySortDescriptor") {
-//        return NSArraySort(array: arr).sorted()
-//    }
-//    TestSort(name: "SwiftSort") {
-//        return SwiftArraySort(array: arr).sorted()
-//    }
+let count = 1000000
+print("Sort Test array count", count)
+let arr = randomInts(count: count)
 
-let group = TestTool.AsyncGroup()
-group.addWork {
-    MergeSort.testSort(arr: arr)
-}
-group.addWork {
-    HeapSort.testSort(arr: arr)
-}
-group.addWork {
-    NSArraySort.testSort(arr: arr)
-}
-group.addWork {
-    SwiftArraySort.testSort(arr: arr)
-}
-group.addWork {
-    QuickSort.testSort(arr: arr)
-}
-group.startWork()
+NSArraySort.testSort(arr: arr)
+SwiftArraySort.testSort(arr: arr)
+MergeSort.testSort(arr: arr)
+HeapSort.testSort(arr: arr)
+QuickSort.testSort(arr: arr)
+//BubbleSort.testSort(arr: arr)

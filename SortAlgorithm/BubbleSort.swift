@@ -7,15 +7,19 @@
 
 import Foundation
 
-class BubbleSort<E: Comparable> : BaseSort<E> {
+struct BubbleSort<E: Comparable>: Sort {
+    var items: [E]
     
-    private func bubbleSort() {
-        let n = self.items.count
-        // 神奇的swift没有for(;;)??????
-        for i in stride(from: 0, to: n - 1, by: 1) {
+    init(array: [E]) {
+        items = array
+    }
+    
+    private mutating func bubbleSort() {
+        let n = items.count
+        for i in 0 ..< n - 1 {
             var swaped = false
-            for j in stride(from: 0, to: n - i - 1, by: 1) {
-                if self.items[j] > self.items[j + 1] {
+            for j in 0 ..< n - i - 1 {
+                if items[j] > items[j + 1] {
                     swapItem(at: j, toIndex: j + 1)
                     swaped = true
                 }
@@ -26,8 +30,14 @@ class BubbleSort<E: Comparable> : BaseSort<E> {
         }
     }
     
-    override func sorted() -> [E] {
-        self.bubbleSort()
-        return self.items
+    mutating func sorted() -> [E] {
+        bubbleSort()
+        return items
+    }
+    
+    mutating func swapItem(at index: Int, toIndex: Int) {
+        let t = items[index]
+        items[index] = items[toIndex]
+        items[toIndex] = t
     }
 }

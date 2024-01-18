@@ -3,18 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C4B6F4E26789363004287D2 /* HeapSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F4D26789363004287D2 /* HeapSort.swift */; };
 		1C4B6F502678A4C2004287D2 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F4F2678A4C2004287D2 /* QuickSort.swift */; };
-		1C4B6F6C2678AE55004287D2 /* TestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F6B2678AE55004287D2 /* TestTool.swift */; };
 		1C4B6F702678C66B004287D2 /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F6F2678C66B004287D2 /* BubbleSort.swift */; };
-		1C4B6F7326799228004287D2 /* BaseSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F7226799228004287D2 /* BaseSort.swift */; };
+		1C4B6F7326799228004287D2 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B6F7226799228004287D2 /* Sort.swift */; };
 		1C9649CB2664EAA200D3D11C /* AppleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9649CA2664EAA200D3D11C /* AppleSort.swift */; };
 		1CA13B5B26465ED600194784 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA13B5A26465ED600194784 /* main.swift */; };
-		1CD0FA12265DEC1100BB31B0 /* NumberTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */; };
 		1CD0FA14265DEDE500BB31B0 /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,13 +31,11 @@
 /* Begin PBXFileReference section */
 		1C4B6F4D26789363004287D2 /* HeapSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeapSort.swift; sourceTree = "<group>"; };
 		1C4B6F4F2678A4C2004287D2 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
-		1C4B6F6B2678AE55004287D2 /* TestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTool.swift; sourceTree = "<group>"; };
 		1C4B6F6F2678C66B004287D2 /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
-		1C4B6F7226799228004287D2 /* BaseSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSort.swift; sourceTree = "<group>"; };
+		1C4B6F7226799228004287D2 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 		1C9649CA2664EAA200D3D11C /* AppleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSort.swift; sourceTree = "<group>"; };
 		1CA13B5726465ED600194784 /* SortTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SortTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA13B5A26465ED600194784 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTool.swift; sourceTree = "<group>"; };
 		1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +53,7 @@
 		1C4B6F512678AAA1004287D2 /* SortAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
-				1C4B6F7126799212004287D2 /* base */,
+				1C4B6F7226799228004287D2 /* Sort.swift */,
 				1C9649CA2664EAA200D3D11C /* AppleSort.swift */,
 				1CD0FA13265DEDE500BB31B0 /* MergeSort.swift */,
 				1C4B6F4D26789363004287D2 /* HeapSort.swift */,
@@ -67,27 +63,9 @@
 			path = SortAlgorithm;
 			sourceTree = "<group>";
 		};
-		1C4B6F6E2678AE5C004287D2 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				1CD0FA11265DEC1100BB31B0 /* NumberTool.swift */,
-				1C4B6F6B2678AE55004287D2 /* TestTool.swift */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		1C4B6F7126799212004287D2 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				1C4B6F7226799228004287D2 /* BaseSort.swift */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
 		1CA13B4E26465ED600194784 = {
 			isa = PBXGroup;
 			children = (
-				1C4B6F6E2678AE5C004287D2 /* Tool */,
 				1C4B6F512678AAA1004287D2 /* SortAlgorithm */,
 				1CA13B5926465ED600194784 /* SortTest */,
 				1CA13B5826465ED600194784 /* Products */,
@@ -136,8 +114,9 @@
 		1CA13B4F26465ED600194784 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					1CA13B5626465ED600194784 = {
 						CreatedOnToolsVersion = 12.5;
@@ -168,10 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C9649CB2664EAA200D3D11C /* AppleSort.swift in Sources */,
-				1C4B6F7326799228004287D2 /* BaseSort.swift in Sources */,
+				1C4B6F7326799228004287D2 /* Sort.swift in Sources */,
 				1C4B6F502678A4C2004287D2 /* QuickSort.swift in Sources */,
-				1C4B6F6C2678AE55004287D2 /* TestTool.swift in Sources */,
-				1CD0FA12265DEC1100BB31B0 /* NumberTool.swift in Sources */,
 				1CD0FA14265DEDE500BB31B0 /* MergeSort.swift in Sources */,
 				1CA13B5B26465ED600194784 /* main.swift in Sources */,
 				1C4B6F4E26789363004287D2 /* HeapSort.swift in Sources */,
@@ -216,9 +193,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -233,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -277,9 +256,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -288,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -301,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -310,6 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

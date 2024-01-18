@@ -7,45 +7,48 @@
 
 import Foundation
 
-class MergeSort<E: Comparable> : BaseSort<E> {
-    var leftTemp = [E]()
-    required init(array: [E]) {
-        super.init(array: array)
-        for _ in 0 ..< (self.items.count / 2 + 1) {
-            self.leftTemp.append(0 as! E)
+struct MergeSort<E: Comparable>: Sort {
+    var items: [E]
+    
+     init(array: [E]) {
+        items = array
+        for _ in 0 ..< (items.count / 2 + 1) {
+            leftTemp.append(items.first!)
         }
     }
     
-    override func sorted() -> [E] {
-        self.sort(begin: 0, end: self.items.count)
-        return self.items
+    private var leftTemp = [E]()
+    
+    mutating func sorted() -> [E] {
+        sort(begin: 0, end: items.count)
+        return items
     }
     
     // 左闭右开
-    private func sort(begin: Int, end: Int) {
+    private mutating func sort(begin: Int, end: Int) {
         if (begin + 1 < end) {
             let mid = (end + begin) / 2
-            self.sort(begin: begin, end: mid)
-            self.sort(begin: mid, end: end)
+            sort(begin: begin, end: mid)
+            sort(begin: mid, end: end)
             merge(begin: begin, mid: mid, end: end)
 //            print("merge index", begin, mid, end)
         }
     }
     
-    private func merge(begin: Int, mid: Int, end: Int) {
+    private mutating func merge(begin: Int, mid: Int, end: Int) {
         var leftIndex = 0, leftEnd = mid - begin
         var rightIndex = mid, rightEnd = end
         var arrayIndex = begin
         for i in 0 ..< leftEnd { // 拷贝[begin, mid)
-            self.leftTemp[i] = self.items[i + begin]
+            leftTemp[i] = items[i + begin]
         }
         while leftIndex < leftEnd {
-            if rightIndex < rightEnd && (self.leftTemp[leftIndex]) > (self.items[rightIndex]) {
-                self.items[arrayIndex] = self.items[rightIndex]
+            if rightIndex < rightEnd && (leftTemp[leftIndex]) > (items[rightIndex]) {
+                items[arrayIndex] = items[rightIndex]
                 arrayIndex += 1
                 rightIndex += 1
             } else {
-                self.items[arrayIndex] = self.leftTemp[leftIndex]
+                items[arrayIndex] = leftTemp[leftIndex]
                 arrayIndex += 1
                 leftIndex += 1
             }

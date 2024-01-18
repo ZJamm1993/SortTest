@@ -9,16 +9,22 @@ import Foundation
 
 // https://www.geeksforgeeks.org/heap-sort/
 
-class HeapSort<E: Comparable> : BaseSort<E> {
-    private func heapify(size: Int, root: Int) {
+struct HeapSort<E: Comparable>: Sort {
+    var items: [E]
+    
+    init(array: [E]) {
+        items = array
+    }
+    
+    private mutating func heapify(size: Int, root: Int) {
         // 自下而上的下溢
         var largest = root
         let left = 2 * root + 1
         let right = 2 * root + 2
-        if left < size && self.items[left] > self.items[largest] {
+        if left < size && items[left] > items[largest] {
             largest = left
         }
-        if right < size && self.items[right] > self.items[largest] {
+        if right < size && items[right] > items[largest] {
             largest = right
         }
         if largest != root {
@@ -27,9 +33,9 @@ class HeapSort<E: Comparable> : BaseSort<E> {
         }
     }
     
-    private func heapSort() {
+    private mutating func heapSort() {
         // 原地建堆
-        let size = self.items.count
+        let size = items.count
         for i in stride(from: size / 2 - 1, through: 0, by: -1) {
             heapify(size: size, root: i)
         }
@@ -41,8 +47,14 @@ class HeapSort<E: Comparable> : BaseSort<E> {
         }
     }
     
-    override func sorted() -> [E] {
-        self.heapSort()
-        return self.items
+    mutating func sorted() -> [E] {
+        heapSort()
+        return items
+    }
+    
+    mutating func swapItem(at index: Int, toIndex: Int) {
+        let t = items[index]
+        items[index] = items[toIndex]
+        items[toIndex] = t
     }
 }
